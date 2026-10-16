@@ -1,0 +1,460 @@
+.app {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  font-family: var(--font-title);
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--neon-pale);
+  text-shadow: var(--glow-text), 0 0 40px rgba(255, 45, 149, 0.5);
+}
+
+.app-header p {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+.app-body {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .app-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.card {
+  position: relative;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--glow), inset 0 0 24px rgba(255, 45, 149, 0.08);
+  padding: 22px;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neon-pale);
+  text-shadow: var(--glow-text);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.h-icon {
+  color: var(--neon);
+  font-size: 1.2rem;
+}
+
+/* Lot form */
+.lot-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.lot-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  color: var(--text);
+  background: var(--field);
+}
+
+.lot-form input:focus {
+  border-color: var(--neon);
+  box-shadow: var(--glow-sm);
+}
+
+.lot-form input::placeholder {
+  color: var(--text-dim);
+  opacity: 0.7;
+}
+
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--neon), var(--neon-deep));
+  color: #fff;
+  box-shadow: var(--glow-sm);
+}
+
+.btn-primary:hover:not(:disabled) {
+  box-shadow: var(--glow);
+}
+
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-danger,
+.btn-small {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--neon-soft);
+  border: 1px solid var(--line);
+}
+
+.btn-danger:hover,
+.btn-small:hover {
+  background: rgba(255, 45, 149, 0.15);
+  border-color: var(--neon);
+  color: #fff;
+  box-shadow: var(--glow-sm);
+}
+
+/* Lot list */
+.lot-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.lot-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px 8px 12px;
+  border-radius: 12px;
+  background: rgba(255, 45, 149, 0.06);
+  border: 1px solid rgba(255, 45, 149, 0.18);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.lot-item:hover {
+  border-color: var(--line-strong);
+  background: rgba(255, 45, 149, 0.1);
+}
+
+.lot-item.eliminated {
+  text-decoration: line-through;
+}
+
+.lot-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.lot-name {
+  flex: 1;
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lot-name-input {
+  flex: 1;
+  min-width: 0;
+  padding: 4px 8px;
+  border: 1px solid var(--neon);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background: var(--field);
+  color: var(--text);
+  box-shadow: var(--glow-sm);
+}
+
+.lot-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.lot-empty {
+  text-align: center;
+  padding: 30px 10px;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* Settings */
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.setting-row label {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+
+.setting-row select {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: var(--field);
+  color: var(--text);
+  outline: none;
+}
+
+.setting-row select:focus {
+  border-color: var(--neon);
+  box-shadow: var(--glow-sm);
+}
+
+.setting-row select option {
+  background: #1a0412;
+  color: var(--text);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  max-width: 150px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--neon-deep), var(--neon));
+  box-shadow: var(--glow-sm);
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid var(--neon);
+  box-shadow: 0 0 10px var(--neon);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid var(--neon);
+  box-shadow: 0 0 10px var(--neon);
+}
+
+.duration-value {
+  font-size: 0.95rem;
+  color: var(--neon-pale);
+  font-weight: 700;
+  min-width: 30px;
+  text-align: right;
+}
+
+/* Wheel area */
+.wheel-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.wheel-frame {
+  position: relative;
+  width: min(640px, 92vw);
+  aspect-ratio: 1;
+  user-select: none;
+  filter: drop-shadow(0 0 30px rgba(255, 45, 149, 0.35));
+}
+
+.wheel-canvas {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.wheel-border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wheel-center {
+  position: absolute;
+  width: 31%;
+  transform: translate(-50%, -57%);
+  z-index: 3;
+  pointer-events: none;
+  animation: heart-pulse 2.4s ease-in-out infinite;
+}
+
+.wheel-frame.is-spinning .wheel-center {
+  animation-duration: 0.6s;
+}
+
+@keyframes heart-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(255, 45, 149, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 26px rgba(255, 45, 149, 1));
+  }
+}
+
+.wheel-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-spin {
+  padding: 14px 54px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 196, 225, 0.6);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ff4fa7, var(--neon-deep));
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  box-shadow: var(--glow), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: box-shadow 0.3s, opacity 0.3s;
+}
+
+.btn-spin:hover:not(:disabled) {
+  box-shadow: 0 0 20px rgba(255, 45, 149, 0.8), 0 0 50px rgba(255, 45, 149, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.btn-spin:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-reset {
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--glass);
+  color: var(--neon-pale);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.btn-reset:hover {
+  border-color: var(--neon);
+  box-shadow: var(--glow-sm);
+}
+
+/* Winner display */
+.winner-banner {
+  text-align: center;
+  padding: 16px 40px;
+  background: var(--glass-strong);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  border: 1px solid var(--neon);
+  box-shadow: var(--glow), inset 0 0 30px rgba(255, 45, 149, 0.15);
+}
+
+.winner-banner h3 {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 2px;
+}
+
+.winner-banner .winner-name {
+  font-family: var(--font-title);
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: var(--glow-text);
+}
+
+/* Eliminated list */
+.eliminated-list {
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+}
+
+.eliminated-list h3 {
+  font-size: 1rem;
+  color: var(--text-dim);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.eliminated-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.eliminated-tag {
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--glass);
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  text-decoration: line-through;
+}

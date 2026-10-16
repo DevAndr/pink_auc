@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --neon: #ff2d95;
+  --neon-soft: #ff6fb8;
+  --neon-pale: #ffc4e1;
+  --neon-deep: #c2105e;
+  --violet: #9b30ff;
+
+  --bg: #0d0209;
+  --glass: rgba(22, 4, 16, 0.72);
+  --glass-strong: rgba(30, 5, 22, 0.9);
+  --field: rgba(10, 1, 7, 0.75);
+  --line: rgba(255, 45, 149, 0.35);
+  --line-strong: rgba(255, 45, 149, 0.7);
+
+  --text: #ffe6f3;
+  --text-dim: #c58aaa;
+
+  --glow-sm: 0 0 8px rgba(255, 45, 149, 0.55);
+  --glow: 0 0 14px rgba(255, 45, 149, 0.55), 0 0 32px rgba(255, 45, 149, 0.25);
+  --glow-text: 0 0 6px rgba(255, 45, 149, 0.9), 0 0 18px rgba(255, 45, 149, 0.6);
+
+  --font-ui: 'Philosopher', 'Segoe UI', system-ui, sans-serif;
+  --font-title: 'Marck Script', 'Philosopher', cursive;
+
+  font-family: var(--font-ui);
+  color: var(--text);
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at center, rgba(13, 2, 9, 0.15) 0%, rgba(13, 2, 9, 0.75) 100%),
+    url('/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, select {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--neon);
+  color: #fff;
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-deep) transparent;
+}
